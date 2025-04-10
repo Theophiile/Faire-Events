@@ -1,0 +1,10 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+    &-content {
+      flex: 1; // Prend tout l'espace disponible (pousse le footer en bas)
+      padding: 2rem;
+    }
+  }
