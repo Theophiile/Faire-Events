@@ -1,0 +1,81 @@
+@use '../../styles/variables' as *;
+
+.event-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &-image-container {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; // Alignement en bas
+
+    .event-image {
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: bottom; // Force l'alignement bas
+      display: block;
+    }
+  }
+
+  &-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.2rem;
+
+    .event-title {
+      color: $color-secondary;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.8rem 0;
+    }
+
+    .event-date-location {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.5rem 0;
+
+      .event-date {
+        p {
+          margin: 0.4rem 0;
+          font-size: 0.9rem;
+          color: $color-dark;
+        }
+      }
+
+      .event-location {
+        background: $color-secondary;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+    }
+
+    .cta-button {
+      background: $color-secondary;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 30px;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      margin-top: auto;
+    }
+  }
+}

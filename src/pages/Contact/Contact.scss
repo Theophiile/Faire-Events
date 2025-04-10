@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+
+.contact-page {
+  background-color: rgba($color-primary, 0.3);
+  padding: 3rem 0;
+
+  .contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  }
+
+  .contact-form {
+    h1 {
+      color: $color-secondary;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: $font-primary;
+      }
+    }
+
+    .submit-button {
+      background: $color-secondary;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+      }
+    }
+  }
+
+  .contact-info {
+    h2 {
+      color: $color-dark;
+      margin-bottom: 1.5rem;
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.8;
+
+      p {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr !important;
+    padding: 1rem !important;
+  }
+}

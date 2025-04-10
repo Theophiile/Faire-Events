@@ -1,0 +1,15 @@
+@use '../../styles/variables' as *;
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: $color-dark;
+    color: white;
+  
+    &-logo { height: 100px; margin-bottom: 1rem; }
+  
+    .copyright {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+  }

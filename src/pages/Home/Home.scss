@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+.home {
+  &-intro {
+    padding: 3rem 0;
+    text-align: center;
+    
+    h2 {
+      color: $color-secondary;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .events-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}

@@ -1,10 +1,16 @@
+@use '../../styles/variables' as *;
+
 .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  
-    &-content {
-      flex: 1; // Prend tout l'espace disponible (pousse le footer en bas)
-      padding: 2rem;
-    }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-primary;
+
+  &-main {
+    flex: 1;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
   }
+}

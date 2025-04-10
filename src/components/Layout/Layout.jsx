@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../Header/Header'; // Chemin vers ton Header
-import Footer from '../Footer/Footer'; // Chemin vers ton Footer
-import './Layout.scss'; // Import des styles
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import './Layout.scss';
 
 const Layout = () => {
   return (
     <div className="layout">
       <Header />
-      <main className="layout-content">
-        <Outlet /> {/* Ici s'affichent les pages */}
+      <main className="layout-main">
+        <Outlet /> {/* Contenu des pages */}
       </main>
       <Footer />
     </div>

@@ -1,0 +1,18 @@
+@use '../../styles/variables' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: $color-primary;
+  
+    &-logo { height: 200px; }
+  
+    &-nav a {
+      margin-left: 2rem;
+      color: $color-dark;
+      font-weight: 500;
+      &:hover { color: $color-secondary; }
+    }
+  }
