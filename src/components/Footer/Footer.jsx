@@ -1,11 +1,21 @@
-import logo from '/assets/logos/faire-events.webp';
 import './Footer.scss';
 
-const Footer = () => (
-  <footer className="footer">
-    <img src={logo} alt="Faire-Events" className="footer-logo" />
-    <p className="copyright">© 2024 Faire Events - Tous droits réservés <br />Site créé par Théophile Pinto</p>
-  </footer>
-);
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="container footer-content">
+        <img src="/assets/logos/faire-logo.jpg" alt="Faire Events" className="footer-logo" />
+        <div className="footer-text">
+          <p className="copyright">
+            © {new Date().getFullYear()} Faire Events - Tous droits réservés
+          </p>
+          <p className="credits">
+            Site créé par <a href="#" className="portfolio-link">Théophile Pinto</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer; 

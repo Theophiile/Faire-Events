@@ -1,26 +1,62 @@
 @use '../../styles/variables' as *;
 
 .home {
-  &-intro {
-    padding: 3rem 0;
+  .hero {
+    width: 100%;
+    margin-bottom: $spacing-xl;
+  }
+
+  .intro {
+    padding: $spacing-xl 0;
+    background-color: $color-light;
     text-align: center;
-    
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
     h2 {
       color: $color-secondary;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: $spacing-lg;
     }
 
     p {
-      max-width: 800px;
-      margin: 0 auto;
+      color: $color-dark;
+      font-size: 1.1rem;
       line-height: 1.6;
+      margin-bottom: $spacing-xl;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: $color-secondary;
+      color: $color-light;
+      padding: $spacing-md $spacing-xl;
+      border-radius: $border-radius-lg;
+      font-weight: 500;
+      transition: background-color $transition-normal;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+      }
     }
   }
-
-  .events-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .home {
+    .intro {
+      padding: $spacing-lg $spacing-md;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+} 

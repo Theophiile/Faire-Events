@@ -7,12 +7,12 @@ const Layout = () => {
   return (
     <div className="layout">
       <Header />
-      <main className="layout-main">
-        <Outlet /> {/* Contenu des pages */}
+      <main className="main-content">
+        <Outlet />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Layout;
+export default Layout; 

@@ -1,134 +1,180 @@
 @use '../../styles/variables' as *;
-@use 'sass:color';
 
 .about-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: $spacing-xl 0;
+
+  section {
+    margin-bottom: $spacing-xl * 2;
+  }
 
   .hero-section {
     text-align: center;
-    padding: 4rem 0;
-    background-color: rgba($color-primary, 0.5);
-    margin-bottom: 3rem;
-    border-radius: 8px;
+    padding: $spacing-xl 0;
+
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: $spacing-xl;
+    }
 
     h1 {
       color: $color-secondary;
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: $spacing-lg;
     }
 
     p {
+      font-size: 1.2rem;
+      line-height: 1.6;
       max-width: 800px;
       margin: 0 auto;
-      line-height: 1.6;
       color: $color-dark;
     }
   }
 
   .team-section {
-    margin: 4rem 0;
+    padding: $spacing-xl 0;
+    background-color: rgba($color-secondary, 0.05);
 
     h2 {
       text-align: center;
-      margin-bottom: 2rem;
-      color: $color-dark;
+      color: $color-secondary;
       font-size: 2rem;
+      margin-bottom: $spacing-xl;
     }
 
-    .team-grid {
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        min-height: 300px;
-        padding: 2rem;
+    .team-member {
+      display: flex;
+      gap: $spacing-xl;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+
+      .member-photo {
+        flex: 0 0 300px;
         
-
-      .team-member {
-        text-align: center;
-        width: 40%;
-        padding: 1.5rem;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
-
-        &:hover {
-          transform: translateY(-5px);
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius-lg;
+          box-shadow: $shadow-md;
         }
+      }
 
-        .avatar {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          margin: 0 auto 1rem;
-          background-size: cover;
-          background-position: center;
-          border: 3px solid $color-secondary;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+      .member-info {
+        flex: 1;
 
         h3 {
           color: $color-secondary;
-          margin-top: 0.5rem;
-          font-size: 1.2rem;
+          font-size: 1.8rem;
+          margin-bottom: $spacing-xs;
         }
 
-        p {
+        .role {
+          font-size: 1.2rem;
+          color: $color-primary;
+          margin-bottom: $spacing-md;
+          font-weight: 500;
+        }
+
+        .bio {
+          font-size: 1.1rem;
+          line-height: 1.6;
           color: $color-dark;
-          font-size: 0.9rem;
-          margin-top: 0.25rem;
         }
       }
     }
   }
 
   .values-section {
-    margin-top: 5rem;
-    
+    padding: $spacing-xl 0;
+
     h2 {
       text-align: center;
-      margin-bottom: 2rem;
-      color: $color-dark;
+      color: $color-secondary;
       font-size: 2rem;
+      margin-bottom: $spacing-xl;
     }
 
-    .values-list {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xl;
+      max-width: 1200px;
       margin: 0 auto;
 
-      li {
-        padding: 1.2rem;
-        margin-bottom: 1rem;
-        background: white;
-        border-left: 4px solid $color-secondary;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        border-radius: 0 4px 4px 0;
-        transition: transform 0.2s;
+      .value-card {
+        background: $color-light;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+        box-shadow: $shadow-md;
+        transition: transform $transition-normal;
 
         &:hover {
-          transform: translateX(5px);
+          transform: translateY(-5px);
+        }
+
+        h3 {
+          color: $color-secondary;
+          font-size: 1.5rem;
+          margin-bottom: $spacing-md;
+        }
+
+        p {
+          color: $color-dark;
+          line-height: 1.6;
         }
       }
     }
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .about-page {
-    padding: 1rem;
-
     .hero-section {
-      padding: 2rem 1rem;
+      padding: $spacing-lg $spacing-md;
+
+      .logo {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
     }
 
-    .team-section .team-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 1.5rem;
+    .team-section {
+      padding: $spacing-lg $spacing-md;
+
+      .team-member {
+        flex-direction: column;
+        text-align: center;
+
+        .member-photo {
+          flex: 0 0 auto;
+          max-width: 250px;
+          margin: 0 auto;
+        }
+
+        .member-info {
+          .bio {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .values-section {
+      padding: $spacing-lg $spacing-md;
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+      }
     }
   }
-}
+} 

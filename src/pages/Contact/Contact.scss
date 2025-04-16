@@ -1,80 +1,153 @@
 @use '../../styles/variables' as *;
 
 .contact-page {
-  background-color: rgba($color-primary, 0.3);
-  padding: 3rem 0;
+  padding: $spacing-xl 0;
+  min-height: calc(100vh - 80px); // Hauteur de la page moins le header
+  display: flex;
+  align-items: center;
 
-  .contact-container {
-    max-width: 1000px;
-    margin: 0 auto;
+  .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    gap: $spacing-xl * 2;
+    background: $color-light;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-lg;
+    padding: $spacing-xl;
+    margin: $spacing-xl 0;
+  }
+
+  .contact-info {
+    h1 {
+      color: $color-secondary;
+      font-size: 2.5rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: $color-dark;
+      margin-bottom: $spacing-xl;
+    }
+
+    .info-items {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+
+    .info-item {
+      h3 {
+        color: $color-secondary;
+        font-size: 1.2rem;
+        margin-bottom: $spacing-xs;
+      }
+
+      p {
+        color: $color-dark;
+        font-size: 1.1rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: $spacing-md;
+
+        a {
+          color: $color-secondary;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color $transition-normal;
+
+          &:hover {
+            color: darken($color-secondary, 10%);
+          }
+        }
+      }
+    }
   }
 
   .contact-form {
-    h1 {
-      color: $color-secondary;
-      margin-bottom: 1.5rem;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
 
       label {
-        display: block;
-        margin-bottom: 0.5rem;
+        color: $color-dark;
         font-weight: 500;
       }
 
-      input, textarea {
-        width: 100%;
-        padding: 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
+      input,
+      textarea {
+        padding: $spacing-sm;
+        border: 2px solid rgba($color-secondary, 0.2);
+        border-radius: $border-radius-md;
         font-family: $font-primary;
+        font-size: 1rem;
+        transition: border-color $transition-normal;
+
+        &:focus {
+          outline: none;
+          border-color: $color-secondary;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
       }
     }
 
     .submit-button {
       background: $color-secondary;
-      color: white;
+      color: $color-light;
+      padding: $spacing-md;
       border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 4px;
+      border-radius: $border-radius-lg;
+      font-size: 1.1rem;
+      font-weight: 500;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color $transition-normal;
+      margin-top: $spacing-md;
 
       &:hover {
         background: darken($color-secondary, 10%);
       }
     }
   }
+}
 
-  .contact-info {
-    h2 {
-      color: $color-dark;
-      margin-bottom: 1.5rem;
+@media (max-width: $breakpoint-tablet) {
+  .contact-page {
+    padding: $spacing-md;
+
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+      padding: $spacing-lg;
     }
 
-    address {
-      font-style: normal;
-      line-height: 1.8;
+    .contact-info {
+      h1 {
+        font-size: 2rem;
+      }
 
-      p {
-        margin-bottom: 1rem;
+      .intro-text {
+        font-size: 1rem;
+      }
+    }
+
+    .contact-form {
+      .submit-button {
+        width: 100%;
       }
     }
   }
-}
-
-@media (max-width: 768px) {
-  .contact-container {
-    grid-template-columns: 1fr !important;
-    padding: 1rem !important;
-  }
-}
+} 

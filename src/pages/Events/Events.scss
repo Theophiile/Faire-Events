@@ -1,56 +1,114 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .events-page {
-  padding: 2rem 0;
+  padding: $spacing-xl 0;
 
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: $color-secondary;
+  .container {
+    h1 {
+      text-align: center;
+      color: $color-secondary;
+      font-size: 2.5rem;
+      margin-bottom: $spacing-xl;
+    }
   }
 
   .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: $spacing-xl;
+    padding: $spacing-md;
+  }
 
-    .event-card {
-      background: white;
-      border-radius: 8px;
+  .event-card {
+    background: $color-light;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: transform $transition-normal;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+    }
+
+    .event-image-container {
+      width: 100%;
+      height: 200px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
 
-      &:hover {
-        transform: translateY(-5px);
+      .event-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $transition-normal;
       }
 
-      &-image {
-        height: 200px;
-        background-size: cover;
-        background-position: center;
+      &:hover .event-image {
+        transform: scale(1.05);
+      }
+    }
+
+    .event-details {
+      padding: $spacing-lg;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .event-title {
+        color: $color-secondary;
+        font-size: 1.2rem;
+        margin-bottom: $spacing-md;
       }
 
-      &-content {
-        padding: 1.5rem;
+      .event-info {
+        margin-bottom: $spacing-lg;
 
-        h3 {
+        .event-date {
           color: $color-dark;
-          margin-bottom: 0.5rem;
-        }
-
-        .date-location {
-          display: flex;
-          gap: 1rem;
-          margin: 0.8rem 0;
           font-size: 0.9rem;
-
-          svg {
-            color: $color-secondary;
-          }
+          margin-bottom: $spacing-xs;
+          white-space: pre-line;
+          line-height: 1.4;
         }
 
+        .event-location {
+          color: $color-gray;
+        }
+      }
+
+      .cta-button {
+        margin-top: auto;
+        background: $color-secondary;
+        color: $color-light;
+        padding: $spacing-sm $spacing-md;
+        border-radius: $border-radius-lg;
+        text-align: center;
+        font-weight: 500;
+        transition: background-color $transition-normal;
+
+        &:hover {
+          background: darken($color-secondary, 10%);
+        }
       }
     }
   }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .events-page {
+    padding: $spacing-lg $spacing-md;
+
+    .container h1 {
+      font-size: 2rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    .events-grid {
+      gap: $spacing-lg;
+      padding: $spacing-sm;
+    }
+  }
+} 
