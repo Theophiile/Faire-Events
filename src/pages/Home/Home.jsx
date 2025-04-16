@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import EventCarousel from '../../components/EventCarousel/EventCarousel';
+import LogoSlider from '../../components/LogoSlider/LogoSlider';
 import './Home.scss';
 
 // Import des données des événements (à déplacer vers un fichier séparé plus tard)
@@ -34,6 +35,34 @@ const events = [
   }
 ];
 
+const partners = [
+  {
+    id: 1,
+    name: 'Estelle Lagarde',
+    logo: '/assets/images/estellelagarde.jpg'
+  },
+  {
+    id: 2,
+    name: 'Marie Sévrier',
+    logo: '/assets/images/mairiesevrier.png'
+  },
+  {
+    id: 3,
+    name: 'Mairie de Veyrier',
+    logo: '/assets/images/mairieveyrier.jpg'
+  },
+  {
+    id: 4,
+    name: 'Mairie de Thônes',
+    logo: '/assets/images/mairiethones.png'
+  },
+  {
+    id: 5,
+    name: 'Maison Gaia',
+    logo: '/assets/images/maisongaialogo.png'
+  }
+];
+
 const Home = () => {
   return (
     <div className="home">
@@ -52,6 +81,13 @@ const Home = () => {
           <Link to="/events" className="cta-button">
             Voir tous nos événements
           </Link>
+        </div>
+      </section>
+
+      <section className="partners">
+        <div className="container">
+          <h2>Nos Partenaires</h2>
+          <LogoSlider logos={partners} />
         </div>
       </section>
     </div>

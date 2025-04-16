@@ -6,28 +6,28 @@ const events = [
     id: 3,
     title: "Marché des Créateurs à Thônes",
     date: "Samedi 12 avril 2025 • 9h-18h\nSamedi 26 avril 2025 • 9h-18h",
-    location: "Thônes",
+    location: "Thônes - Place Avet",
     imageUrl: "/assets/images/thones.jpeg"
   },
   {
     id: 1,
     title: "Marché des Créateurs à la Maison Gaia",
     date: "Samedi 3 & dimanche 4 mai 2025 • 9h-18h",
-    location: "Meythet",
+    location: "Meythet - 31 route de Frangy",
     imageUrl: "/assets/images/maisongaia1.jpeg"
   },
   {
     id: 4,
     title: "Marché des Créateurs à la Maison Gaia",
     date: "Samedi 7 & dimanche 8 juin 2025 • 9h-18h",
-    location: "Meythet",
+    location: "Meythet - 31 route de Frangy",
     imageUrl: "/assets/images/maisongaia2.jpeg"
   },
   {
     id: 2,
     title: "Marché des Créateurs à Veyrier-du-Lac",
     date: "Samedi 22 juin 2025 • 9h-18h",
-    location: "Veyrier-du-Lac",
+    location: "Veyrier-du-Lac - Quai Général Doyen",
     imageUrl: "/assets/images/veyrier-du-lac.jpeg"
   }
 ];

@@ -1,0 +1,64 @@
+@use '../../styles/variables' as *;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: $color-light;
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+
+  .modal-title {
+    color: $color-secondary;
+    font-size: 1.2rem;
+    margin-bottom: $spacing-lg;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+
+    button {
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius-md;
+      font-weight: 500;
+      transition: all $transition-normal;
+      border: none;
+      cursor: pointer;
+
+      &.confirm-button {
+        background-color: $color-secondary;
+        color: $color-light;
+
+        &:hover {
+          background-color: darken($color-secondary, 10%);
+        }
+      }
+
+      &.cancel-button {
+        background-color: $color-secondary;
+        color: $color-light;
+
+        &:hover {
+          background-color: darken($color-gray, 10%);
+        }
+      }
+    }
+  }
+} 

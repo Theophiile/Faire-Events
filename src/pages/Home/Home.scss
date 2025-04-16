@@ -45,6 +45,20 @@
   }
 }
 
+.partners {
+  padding: $spacing-xl 0;
+  background: $color-light;
+  border-top: 1px solid rgba($color-dark, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    color: $color-dark;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .home {
     .intro {
@@ -57,6 +71,23 @@
       p {
         font-size: 1rem;
       }
+    }
+  }
+
+  .partners {
+    padding: $spacing-lg 0;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .partners {
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-sm;
     }
   }
 } 

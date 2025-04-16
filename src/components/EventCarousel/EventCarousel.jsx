@@ -55,6 +55,21 @@ const EventCarousel = ({ events }) => {
     );
   };
 
+  const getSlideStyle = (index) => {
+    let distance = index - currentSlide;
+    
+    // Ajuster la distance pour créer une transition fluide entre la dernière et la première image
+    if (distance > events.length / 2) {
+      distance -= events.length;
+    } else if (distance < -events.length / 2) {
+      distance += events.length;
+    }
+
+    return {
+      transform: `translateX(${100 * distance}%)`
+    };
+  };
+
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
@@ -92,9 +107,7 @@ const EventCarousel = ({ events }) => {
           <div
             key={event.id}
             className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-            style={{
-              transform: `translateX(${100 * (index - currentSlide)}%)`
-            }}
+            style={getSlideStyle(index)}
           >
             <img 
               src={event.imageUrl} 
