@@ -21,18 +21,17 @@ const EventCarousel = ({ events }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [direction, setDirection] = useState(0); // -1 pour gauche, 1 pour droite
   const autoPlayRef = useRef(null);
   const isMobile = useIsMobile();
 
-  // Minimum distance for swipe
   const minSwipeDistance = 50;
 
   useEffect(() => {
     if (!isMobile) {
       autoPlayRef.current = setInterval(() => {
-        setCurrentSlide((current) => 
-          current === events.length - 1 ? 0 : current + 1
-        );
+        setDirection(1);
+        setCurrentSlide(current => (current + 1) % events.length);
       }, 5000);
 
       return () => {
@@ -44,30 +43,13 @@ const EventCarousel = ({ events }) => {
   }, [events.length, isMobile]);
 
   const nextSlide = () => {
-    setCurrentSlide(current => 
-      current === events.length - 1 ? 0 : current + 1
-    );
+    setDirection(1);
+    setCurrentSlide(current => (current + 1) % events.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide(current => 
-      current === 0 ? events.length - 1 : current - 1
-    );
-  };
-
-  const getSlideStyle = (index) => {
-    let distance = index - currentSlide;
-    
-    // Ajuster la distance pour créer une transition fluide entre la dernière et la première image
-    if (distance > events.length / 2) {
-      distance -= events.length;
-    } else if (distance < -events.length / 2) {
-      distance += events.length;
-    }
-
-    return {
-      transform: `translateX(${100 * distance}%)`
-    };
+    setDirection(-1);
+    setCurrentSlide(current => (current - 1 + events.length) % events.length);
   };
 
   const onTouchStart = (e) => {
@@ -93,6 +75,11 @@ const EventCarousel = ({ events }) => {
     }
   };
 
+  const goToSlide = (index) => {
+    setDirection(index > currentSlide ? 1 : -1);
+    setCurrentSlide(index);
+  };
+
   if (!events || events.length === 0) return null;
 
   return (
@@ -103,27 +90,44 @@ const EventCarousel = ({ events }) => {
       onTouchEnd={onTouchEnd}
     >
       <div className="carousel-container">
-        {events.map((event, index) => (
-          <div
-            key={event.id}
-            className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-            style={getSlideStyle(index)}
-          >
-            <img 
-              src={event.imageUrl} 
-              alt={event.title}
-              className="carousel-image"
-            />
-            <div className="carousel-content">
-              <h2>{event.title}</h2>
-              <p className="event-date">{event.date}</p>
-              <p className="event-location">{event.location}</p>
-              <Link to={`/events`} className="cta-button">
-                En savoir plus
-              </Link>
+        {events.map((event, index) => {
+          const isActive = index === currentSlide;
+          const isPrev = (currentSlide === 0 && index === events.length - 1) || 
+                        (index === currentSlide - 1);
+          const isNext = (currentSlide === events.length - 1 && index === 0) || 
+                        (index === currentSlide + 1);
+          
+          if (!isActive && !isPrev && !isNext) return null;
+          
+          return (
+            <div
+              key={event.id}
+              className={`carousel-slide ${isActive ? 'active' : ''} ${
+                direction > 0 ? 'slide-next' : 'slide-prev'
+              }`}
+              style={{
+                display: 'block',
+                transform: isActive ? 'translateX(0)' : 
+                         (direction > 0 && isNext) ? 'translateX(100%)' :
+                         (direction < 0 && isPrev) ? 'translateX(-100%)' : 'none'
+              }}
+            >
+              <img 
+                src={event.imageUrl} 
+                alt={event.title}
+                className="carousel-image"
+              />
+              <div className="carousel-content">
+                <h2>{event.title}</h2>
+                <p className="event-date">{event.date}</p>
+                <p className="event-location">{event.location}</p>
+                <Link to={`/events`} className="cta-button">
+                  En savoir plus
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <button 
@@ -146,7 +150,7 @@ const EventCarousel = ({ events }) => {
           <button
             key={index}
             className={`indicator ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => goToSlide(index)}
             aria-label={`Aller à l'événement ${index + 1}`}
           />
         ))}
