@@ -49,7 +49,11 @@ const Contact = () => {
               
               <div className="info-item">
                 <h3>Téléphone</h3>
-                <p>06 60 17 89 59</p>
+                <p>
+                  <a href="tel:0660178959" className="phone-link">
+                    06 60 17 89 59
+                  </a>
+                </p>
               </div>
               
               <div className="info-item">

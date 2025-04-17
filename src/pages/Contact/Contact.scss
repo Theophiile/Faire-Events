@@ -47,6 +47,16 @@
       p {
         color: $color-dark;
         font-size: 1.1rem;
+
+        .phone-link {
+          color: $color-secondary;
+          text-decoration: none;
+          transition: opacity $transition-normal;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
       }
 
       .social-links {
