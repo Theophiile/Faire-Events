@@ -65,7 +65,7 @@ const Contact = () => {
                       Instagram
                     </a>
                     <span className="separator">•</span>
-                    <a href="https://www.facebook.com/faire.events" target="_blank" rel="noopener noreferrer" className="social-text-link">
+                    <a href="https://www.facebook.com/people/Faire-Events/100092213289568/" target="_blank" rel="noopener noreferrer" className="social-text-link">
                       <span className="social-icon facebook"></span>
                       Facebook
                     </a>
