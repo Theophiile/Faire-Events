@@ -55,12 +55,17 @@ const Contact = () => {
               <div className="info-item">
                 <h3>Suivez-nous</h3>
                 <div className="social-links">
-                  <a href="https://instagram.com/faire.events" target="_blank" rel="noopener noreferrer">
-                    Instagram
-                  </a>
-                  <a href="https://facebook.com/faire.events" target="_blank" rel="noopener noreferrer">
-                    Facebook
-                  </a>
+                  <div className="social-text-links">
+                    <a href="https://www.instagram.com/faire_events/" target="_blank" rel="noopener noreferrer" className="social-text-link">
+                      <span className="social-icon instagram"></span>
+                      Instagram
+                    </a>
+                    <span className="separator">•</span>
+                    <a href="https://www.facebook.com/faire.events" target="_blank" rel="noopener noreferrer" className="social-text-link">
+                      <span className="social-icon facebook"></span>
+                      Facebook
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
