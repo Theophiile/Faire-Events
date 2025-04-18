@@ -66,6 +66,8 @@ const partners = [
 const Home = () => {
   return (
     <div className="home">
+      <h1 className="visually-hidden">Faire Events - Marchés de créateurs en Haute-Savoie</h1>
+      
       <section className="hero">
         <EventCarousel events={events} />
       </section>

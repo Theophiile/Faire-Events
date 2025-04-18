@@ -18,11 +18,10 @@
     padding: 0 $spacing-md;
   }
 
-  .logo-link {
+  .logo-container {
     height: 80px;
     display: flex;
     align-items: center;
-    z-index: 1001;
     margin-right: auto;
 
     .logo {
@@ -109,7 +108,7 @@
   .header {
     height: 90px;
     
-    .logo-link {
+    .logo-container {
       height: 85px;
       position: absolute;
       right: $spacing-md;

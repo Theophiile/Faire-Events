@@ -12,12 +12,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container header-content">
-        <Link to="/" className="logo-link">
-          <img src="/assets/logos/faire-logo.webp" alt="Faire Events" className="logo" />
-        </Link>
+        <div className="logo-container">
+          <img src="/assets/logos/faire-logo.jpg" alt="Faire Events" className="logo" />
+        </div>
         
         <button className="menu-toggle" onClick={toggleMenu}>
           <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
+          <span className="visually-hidden">{isMenuOpen ? 'Fermer' : 'Ouvrir'} le menu</span>
         </button>
 
         <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
@@ -39,4 +40,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;
