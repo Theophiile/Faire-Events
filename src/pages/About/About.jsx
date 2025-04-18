@@ -5,7 +5,7 @@ const About = () => {
     <div className="about-page">
       <div className="container">
         <section className="hero-section">
-          <img src="/assets/logos/faire-logo.jpg" alt="Faire Events Logo" className="logo" />
+          <img src="/assets/logos/faire-logo.webp" alt="Faire Events Logo" className="logo" />
           <h1>Notre Histoire</h1>
           <p>
             Faire Events est né d'une passion pour l'artisanat et d'une volonté de créer des connexions 
