@@ -1,20 +1,39 @@
 import React from 'react';
 import './Modal.scss';
 
-const Modal = ({ isOpen, onClose, onConfirm, message }) => {
+const Modal = ({ 
+  isOpen, 
+  onClose, 
+  onConfirm, 
+  title,
+  message, 
+  showConfirmButton = true,
+  showCloseButton = true
+}) => {
   if (!isOpen) return null;
+
+  const formattedMessage = message?.split('\n').map((line, index) => (
+    <p key={index}>{line}</p>
+  ));
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <div className="modal-title">{message}</div>
+        {title && <h2 className="modal-title">{title}</h2>}
+        <div className="modal-message">
+          {formattedMessage}
+        </div>
         <div className="modal-buttons">
-          <button className="confirm-button" onClick={onConfirm}>
-            Oui
-          </button>
-          <button className="cancel-button" onClick={onClose}>
-            Non
-          </button>
+          {showConfirmButton && (
+            <button className="confirm-button" onClick={onConfirm}>
+              Oui
+            </button>
+          )}
+          {showCloseButton && (
+            <button className="close-button" onClick={onClose}>
+              Fermer
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ const About = () => {
           <h2>Fondatrice</h2>
           <div className="team-member">
             <div className="member-photo">
-              <img src="/assets/images/justine.png" alt="Justine Pinto - Fondatrice" />
+              <img src="/assets/images/justine.webp" alt="Justine Pinto - Fondatrice" />
             </div>
             <div className="member-info">
               <h3>Justine Pinto</h3>

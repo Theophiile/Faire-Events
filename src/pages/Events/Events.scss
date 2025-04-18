@@ -3,20 +3,18 @@
 .events-page {
   padding: $spacing-xl 0;
 
-  .container {
-    h1 {
-      text-align: center;
-      color: $color-secondary;
-      font-size: 2.5rem;
-      margin-bottom: $spacing-xl;
-    }
+  h1 {
+    text-align: center;
+    color: $color-secondary;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xl;
   }
 
   .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: $spacing-xl;
-    padding: $spacing-md;
+    padding: $spacing-md 0;
   }
 
   .event-card {
@@ -25,18 +23,17 @@
     overflow: hidden;
     box-shadow: $shadow-md;
     transition: transform $transition-normal;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: $shadow-lg;
     }
 
     .event-image-container {
       width: 100%;
-      height: 200px;
+      height: 250px;
       overflow: hidden;
 
       .event-image {
@@ -45,51 +42,49 @@
         object-fit: cover;
         transition: transform $transition-normal;
       }
-
-      &:hover .event-image {
-        transform: scale(1.05);
-      }
     }
 
     .event-details {
       padding: $spacing-lg;
-      flex: 1;
       display: flex;
       flex-direction: column;
+      flex: 1;
 
       .event-title {
         color: $color-secondary;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-bottom: $spacing-md;
+        font-weight: 600;
       }
 
       .event-info {
+        flex: 1;
         margin-bottom: $spacing-lg;
 
         .event-date {
           color: $color-dark;
-          font-size: 1rem;
-          margin-bottom: $spacing-md;
+          font-weight: 500;
+          margin-bottom: $spacing-xs;
           white-space: pre-line;
-          line-height: 1.4;
         }
 
         .event-location {
-          color: $color-gray;
+          color: $color-dark;
           font-size: 0.9rem;
-          font-style: italic;
         }
       }
 
       .cta-button {
-        margin-top: auto;
+        width: 100%;
+        padding: $spacing-sm;
         background: $color-secondary;
         color: $color-light;
-        padding: $spacing-sm $spacing-md;
-        border-radius: $border-radius-lg;
-        text-align: center;
+        border: none;
+        border-radius: $border-radius-md;
         font-weight: 500;
+        cursor: pointer;
         transition: background-color $transition-normal;
+        margin-top: auto;
 
         &:hover {
           background: darken($color-secondary, 10%);
@@ -103,14 +98,28 @@
   .events-page {
     padding: $spacing-lg $spacing-md;
 
-    .container h1 {
+    h1 {
       font-size: 2rem;
       margin-bottom: $spacing-lg;
     }
 
     .events-grid {
+      grid-template-columns: 1fr;
       gap: $spacing-lg;
-      padding: $spacing-sm;
+    }
+
+    .event-card {
+      .event-image-container {
+        height: 200px;
+      }
+
+      .event-details {
+        padding: $spacing-md;
+
+        .event-title {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 } 

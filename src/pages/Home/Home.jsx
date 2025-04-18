@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import EventCarousel from '../../components/EventCarousel/EventCarousel';
 import LogoSlider from '../../components/LogoSlider/LogoSlider';
+import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import './Home.scss';
 
 // Import des données des événements (à déplacer vers un fichier séparé plus tard)
@@ -32,6 +33,33 @@ const events = [
     date: "Samedi 22 juin 2025 • 9h-18h",
     location: "Veyrier-du-Lac",
     imageUrl: "/assets/images/veyrier-du-lac.webp"
+  }
+];
+
+const galleryImages = [
+  {
+    url: '/assets/images/gallery/marche1.webp',
+    description: 'Ambiance chaleureuse au marché de créateurs de Thônes'
+  },
+  {
+    url: '/assets/images/gallery/marche2.webp',
+    description: 'Stand de bijoux artisanaux à Veyrier-du-Lac'
+  },
+  {
+    url: '/assets/images/gallery/marche3.webp',
+    description: 'Créations textiles à la Maison Gaia'
+  },
+  {
+    url: '/assets/images/gallery/marche4.webp',
+    description: 'Échanges entre créateurs et visiteurs'
+  },
+  {
+    url: '/assets/images/gallery/marche5.webp',
+    description: 'Exposition de céramiques artisanales'
+  },
+  {
+    url: '/assets/images/gallery/marche6.webp',
+    description: 'Animation et convivialité au cœur du marché'
   }
 ];
 
@@ -83,6 +111,18 @@ const Home = () => {
           <Link to="/events" className="cta-button">
             Voir tous nos événements
           </Link>
+        </div>
+      </section>
+
+      <section className="gallery-section">
+        <div className="container">
+          <h2>Nos événements en images</h2>
+          <p className="gallery-intro">
+            Chez Faire Events, chaque marché est une expérience unique. Les photos de nos prochains événements seront bientôt disponibles !
+          </p>
+          <div className="coming-soon-message">
+            Photos à venir
+          </div>
         </div>
       </section>
 

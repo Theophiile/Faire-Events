@@ -6,11 +6,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: $spacing-md;
 }
 
 .modal-content {
@@ -18,14 +19,37 @@
   padding: $spacing-xl;
   border-radius: $border-radius-lg;
   box-shadow: $shadow-lg;
-  max-width: 400px;
+  max-width: 600px;
   width: 90%;
-  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
 
   .modal-title {
     color: $color-secondary;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: $spacing-lg;
+    text-align: center;
+  }
+
+  .modal-message {
+    margin-bottom: $spacing-lg;
+    color: $color-dark;
+    line-height: 1.6;
+
+    p {
+      margin-bottom: $spacing-md;
+      
+      &:first-of-type {
+        font-weight: 600;
+        color: $color-secondary;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .modal-buttons {
@@ -35,7 +59,7 @@
     margin-top: $spacing-lg;
 
     button {
-      padding: $spacing-sm $spacing-lg;
+      padding: $spacing-sm $spacing-xl;
       border-radius: $border-radius-md;
       font-weight: 500;
       transition: all $transition-normal;
@@ -51,12 +75,31 @@
         }
       }
 
-      &.cancel-button {
+      &.close-button {
         background-color: $color-secondary;
         color: $color-light;
 
         &:hover {
-          background-color: darken($color-gray, 10%);
+          background-color: darken($color-secondary, 10%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .modal-content {
+    padding: $spacing-lg;
+    width: 95%;
+
+    .modal-title {
+      font-size: 1.3rem;
+    }
+
+    .modal-message {
+      p {
+        &:first-of-type {
+          font-size: 1.1rem;
         }
       }
     }
