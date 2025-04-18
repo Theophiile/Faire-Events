@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-content">
         <div className="footer-logo-section">
-          <img src="/assets/logos/faire-logo.jpg" alt="Faire Events" className="footer-logo" />
+          <img src="/assets/logos/faire-logo.webp" alt="Faire Events" className="footer-logo" />
           <div className="social-links">
             <a 
               href="https://www.facebook.com/people/Faire-Events/100092213289568/" 

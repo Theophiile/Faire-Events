@@ -13,7 +13,7 @@ const Header = () => {
     <header className="header">
       <div className="container header-content">
         <div className="logo-container">
-          <img src="/assets/logos/faire-logo.jpg" alt="Faire Events" className="logo" />
+          <img src="/assets/logos/faire-logo.webp" alt="Faire Events" className="logo" />
         </div>
         
         <button className="menu-toggle" onClick={toggleMenu}>
