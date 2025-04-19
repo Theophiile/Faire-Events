@@ -7,7 +7,15 @@
     text-align: center;
     color: $color-secondary;
     font-size: 2.5rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  .events-subtitle {
+    text-align: center;
+    color: $color-dark;
+    font-size: 1.3rem;
     margin-bottom: $spacing-xl;
+    font-weight: 500;
   }
 
   .events-grid {

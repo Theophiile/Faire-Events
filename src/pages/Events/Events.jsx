@@ -106,10 +106,23 @@ const Events = () => {
     setSelectedEvent(null);
   };
 
+  // Fonction pour générer des textes alternatifs descriptifs
+  const getImageAltText = (event) => {
+    if (event.id === 1) return "Espace verdoyant de la Maison Gaia à Meythet, région d'Annecy pour l'événement de mai 2025";
+    if (event.id === 4) return "Vue extérieure de la Maison Gaia à Meythet près d'Annecy pour le marché de juin 2025";
+    if (event.id === 2) return "Vue du quai Général Doyen à Veyrier-du-Lac sur les bords du lac d'Annecy";
+    if (event.id === 3) return "Place Avet au centre de Thônes en Haute-Savoie près d'Annecy";
+    if (event.id === 5) return "Panneau d'information de la ville de Sévrier au bord du lac d'Annecy";
+    if (event.id === 6) return "Ambiance de Noël à Veyrier-du-Lac sur les rives du lac d'Annecy";
+    
+    return `Illustration pour ${event.title} dans la région d'Annecy`; // Fallback
+  };
+
   return (
     <div className="events-page">
       <div className="container">
         <h1>Nos Événements</h1>
+        <h2 className="events-subtitle">Calendrier 2025 des marchés de créateurs</h2>
         <div className="events-grid">
           {events.map((event) => (
             <div 
@@ -119,7 +132,7 @@ const Events = () => {
               <div className="event-image-container">
                 <img 
                   src={event.imageUrl} 
-                  alt={event.title}
+                  alt={getImageAltText(event)}
                   className="event-image"
                 />
               </div>
