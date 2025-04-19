@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import EventCarousel from '../../components/EventCarousel/EventCarousel';
 import LogoSlider from '../../components/LogoSlider/LogoSlider';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
+import Modal from '../../components/Modal/Modal';
 import './Home.scss';
 
 // Import des données des événements (à déplacer vers un fichier séparé plus tard)
@@ -38,28 +40,44 @@ const events = [
 
 const galleryImages = [
   {
-    url: '/assets/images/gallery/marche1.webp',
-    description: 'Ambiance chaleureuse au marché de créateurs de Thônes'
+    url: '/assets/images/photorecap/plasticienne.webp',
+    description: 'Artiste plasticienne présentant ses créations.'
   },
   {
-    url: '/assets/images/gallery/marche2.webp',
-    description: 'Stand de bijoux artisanaux à Veyrier-du-Lac'
+    url: '/assets/images/photorecap/portraitiste.webp',
+    description: 'Portraitiste en pleine création lors d\'un événement.'
   },
   {
-    url: '/assets/images/gallery/marche3.webp',
-    description: 'Créations textiles à la Maison Gaia'
+    url: '/assets/images/photorecap/Estelle Lagarde.webp',
+    description: 'Estelle Lagarde, créatrice de bijoux et fondatrice de la marque Lagarde.'
   },
   {
-    url: '/assets/images/gallery/marche4.webp',
-    description: 'Échanges entre créateurs et visiteurs'
+    url: '/assets/images/photorecap/Estelle cours.webp',
+    description: 'Atelier d\'initiation au gouaché de haute joaillerie animé par Estelle Lagarde.'
   },
   {
-    url: '/assets/images/gallery/marche5.webp',
-    description: 'Exposition de céramiques artisanales'
+    url: '/assets/images/photorecap/eco-responsable.webp',
+    description: 'Stand de décorations éco-responsables.'
   },
   {
-    url: '/assets/images/gallery/marche6.webp',
-    description: 'Animation et convivialité au cœur du marché'
+    url: '/assets/images/photorecap/linogravure.webp',
+    description: 'Exposition de linogravure par une artiste plasticienne.'
+  },
+  {
+    url: '/assets/images/photorecap/gemmologue.webp',
+    description: 'Démonstration de taille de pierres précieuses par une lapidaire/gemmologue.'
+  },
+  {
+    url: '/assets/images/photorecap/estellebijoux.webp',
+    description: 'Pièce unique de haute joaillerie de la marque Lagarde.'
+  },
+  {
+    url: '/assets/images/photorecap/ateliercreatif.webp',
+    description: 'Atelier créatif ouvert aux enfants lors d\'un événement'
+  },
+  {
+    url: '/assets/images/photorecap/affichethones.webp',
+    description: 'Salon des créateurs de Thônes.'
   }
 ];
 
@@ -92,6 +110,19 @@ const partners = [
 ];
 
 const Home = () => {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [showAllImages, setShowAllImages] = useState(false);
+
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedEvent(null);
+  };
+
+  const displayedImages = showAllImages ? galleryImages : galleryImages.slice(0, 6);
+
   return (
     <div className="home">
       <h1 className="visually-hidden">Faire Events - Marchés de créateurs en Haute-Savoie</h1>
@@ -118,11 +149,37 @@ const Home = () => {
         <div className="container">
           <h2>Nos événements en images</h2>
           <p className="gallery-intro">
-            Chez Faire Events, chaque marché est une expérience unique. Les photos de nos prochains événements seront bientôt disponibles !
+            Découvrez nos marchés de créateurs à travers ces moments capturés lors de nos précédents événements.
           </p>
-          <div className="coming-soon-message">
-            Photos à venir
+          <div className="events-preview-grid">
+            {displayedImages.map((image, index) => (
+              <div 
+                key={index} 
+                className="event-card-preview"
+                onClick={() => handleEventClick({
+                  title: "",
+                  description: image.description,
+                  imageUrl: image.url
+                })}
+              >
+                <div className="event-image-container">
+                  <img 
+                    src={image.url} 
+                    alt={image.description}
+                    className="event-image"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
+          {!showAllImages && galleryImages.length > 6 && (
+            <button 
+              className="voir-plus-button" 
+              onClick={() => setShowAllImages(true)}
+            >
+              Voir plus d'images
+            </button>
+          )}
         </div>
       </section>
 
@@ -132,6 +189,17 @@ const Home = () => {
           <LogoSlider logos={partners} />
         </div>
       </section>
+
+      <Modal
+        isOpen={selectedEvent !== null}
+        onClose={handleCloseModal}
+        onConfirm={handleCloseModal}
+        title={selectedEvent?.title}
+        message={selectedEvent?.description}
+        showConfirmButton={false}
+        showCloseButton={true}
+        imageUrl={selectedEvent?.imageUrl}
+      />
     </div>
   );
 };

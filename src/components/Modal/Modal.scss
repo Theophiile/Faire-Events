@@ -31,6 +31,20 @@
     text-align: center;
   }
 
+  .modal-image-container {
+    margin-bottom: $spacing-lg;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    
+    .modal-image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: contain;
+      display: block;
+      background-color: #f8f8f8;
+    }
+  }
+
   .modal-message {
     margin-bottom: $spacing-lg;
     color: $color-dark;

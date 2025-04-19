@@ -65,6 +65,8 @@
 
   .container {
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   h2 {
@@ -78,16 +80,108 @@
     color: $color-dark;
   }
 
-  .coming-soon-message {
-    font-size: 1.5rem;
-    color: $color-secondary;
-    padding: $spacing-xl;
-    background-color: #f5f5f5;
+  .events-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin: $spacing-lg 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .voir-plus-button {
+    background: $color-secondary;
+    color: $color-light;
+    padding: $spacing-md $spacing-xl;
     border-radius: $border-radius-lg;
-    margin: $spacing-xl auto;
-    max-width: 600px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: $spacing-lg;
+    border: none;
+    cursor: pointer;
+    transition: background-color $transition-normal;
+    
+    &:hover {
+      background: darken($color-secondary, 10%);
+    }
+  }
+
+  .event-card-preview {
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .event-image-container {
+      height: 250px;
+      overflow: hidden;
+
+      @media (max-width: $breakpoint-tablet) {
+        height: 220px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+
+    .event-details {
+      padding: $spacing-md;
+      text-align: left;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .event-description {
+        margin-bottom: $spacing-md;
+        color: $color-dark;
+        line-height: 1.4;
+        font-size: 0.9rem;
+
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 1rem;
+        }
+      }
+
+      .cta-button {
+        align-self: flex-start;
+        background: $color-secondary;
+        color: $color-light;
+        padding: $spacing-sm $spacing-md;
+        border-radius: $border-radius-md;
+        font-size: 0.9rem;
+        transition: background-color $transition-normal;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: darken($color-secondary, 10%);
+        }
+      }
+    }
   }
 }
 

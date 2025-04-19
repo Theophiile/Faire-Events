@@ -8,7 +8,8 @@ const Modal = ({
   title,
   message, 
   showConfirmButton = true,
-  showCloseButton = true
+  showCloseButton = true,
+  imageUrl = null
 }) => {
   if (!isOpen) return null;
 
@@ -20,6 +21,11 @@ const Modal = ({
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         {title && <h2 className="modal-title">{title}</h2>}
+        {imageUrl && (
+          <div className="modal-image-container">
+            <img src={imageUrl} alt={title || 'Image en détail'} className="modal-image" />
+          </div>
+        )}
         <div className="modal-message">
           {formattedMessage}
         </div>
