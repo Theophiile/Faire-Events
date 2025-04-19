@@ -1,8 +1,19 @@
+import { Helmet } from 'react-helmet';
 import './About.scss';
 
 const About = () => {
   return (
     <div className="about-page">
+      <Helmet>
+        <title>À propos de Faire Events | Organisateur de marchés de créateurs</title>
+        <meta name="description" content="Découvrez qui nous sommes et notre mission de valoriser l'artisanat local en Haute-Savoie à travers des marchés de créateurs uniques." />
+        <meta property="og:title" content="À propos de Faire Events | Organisateur de marchés de créateurs" />
+        <meta property="og:description" content="Découvrez qui nous sommes et notre mission de valoriser l'artisanat local en Haute-Savoie." />
+        <meta property="og:image" content="https://faire-events.fr/assets/images/photorecap/portraitiste.webp" />
+        <meta property="og:url" content="https://faire-events.fr/about" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <div className="container">
         <section className="hero-section">
           <img src="/assets/logos/faire-logo.webp" alt="Faire Events Logo" className="logo" />

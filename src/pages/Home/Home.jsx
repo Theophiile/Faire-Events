@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import EventCarousel from '../../components/EventCarousel/EventCarousel';
 import LogoSlider from '../../components/LogoSlider/LogoSlider';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
@@ -125,6 +126,16 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Faire Events - Marchés de créateurs en Haute-Savoie</title>
+        <meta name="description" content="Découvrez les marchés de créateurs Faire Events en Haute-Savoie. Des événements uniques qui célèbrent l'artisanat local et mettent en valeur le talent des artisans de notre région." />
+        <meta property="og:title" content="Faire Events - Marchés de créateurs en Haute-Savoie" />
+        <meta property="og:description" content="Découvrez les marchés de créateurs Faire Events en Haute-Savoie. Des événements uniques qui célèbrent l'artisanat local." />
+        <meta property="og:image" content="https://faire-events.fr/assets/logos/faire-logo.webp" />
+        <meta property="og:url" content="https://faire-events.fr" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      
       <h1 className="visually-hidden">Faire Events - Marchés de créateurs en Haute-Savoie</h1>
       
       <section className="hero">

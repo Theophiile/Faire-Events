@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Modal from '../../components/Modal/Modal';
 import './Events.scss';
 
@@ -120,6 +121,16 @@ const Events = () => {
 
   return (
     <div className="events-page">
+      <Helmet>
+        <title>Événements et Marchés de Créateurs | Faire Events</title>
+        <meta name="description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events en Haute-Savoie. Dates, lieux et informations pratiques." />
+        <meta property="og:title" content="Événements et Marchés de Créateurs | Faire Events" />
+        <meta property="og:description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events en Haute-Savoie." />
+        <meta property="og:image" content="https://faire-events.fr/assets/images/thones.webp" />
+        <meta property="og:url" content="https://faire-events.fr/events" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <div className="container">
         <h1>Nos Événements</h1>
         <h2 className="events-subtitle">Calendrier 2025 des marchés de créateurs</h2>

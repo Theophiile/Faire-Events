@@ -1,8 +1,20 @@
+import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import './Contact.scss';
 
 const Contact = () => {
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contactez Faire Events | Marchés de créateurs en Haute-Savoie</title>
+        <meta name="description" content="Une question sur nos événements ou vous souhaitez exposer à l'un de nos marchés de créateurs ? Contactez Faire Events pour plus d'informations." />
+        <meta property="og:title" content="Contactez Faire Events | Marchés de créateurs en Haute-Savoie" />
+        <meta property="og:description" content="Une question sur nos événements ou vous souhaitez exposer à l'un de nos marchés de créateurs ? Contactez-nous." />
+        <meta property="og:image" content="https://faire-events.fr/assets/logos/faire-logo.webp" />
+        <meta property="og:url" content="https://faire-events.fr/contact" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <div className="container">
         <div className="contact-content">
           <section className="contact-info">
