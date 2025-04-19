@@ -123,9 +123,9 @@ const Events = () => {
     <div className="events-page">
       <Helmet>
         <title>Événements et Marchés de Créateurs | Faire Events</title>
-        <meta name="description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events en Haute-Savoie. Dates, lieux et informations pratiques." />
+        <meta name="description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events à Annecy et dans toute la Haute-Savoie. Dates, lieux et informations pratiques." />
         <meta property="og:title" content="Événements et Marchés de Créateurs | Faire Events" />
-        <meta property="og:description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events en Haute-Savoie." />
+        <meta property="og:description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events à Annecy et dans toute la Haute-Savoie. Dates, lieux et informations pratiques." />
         <meta property="og:image" content="https://faire-events.fr/assets/images/thones.webp" />
         <meta property="og:url" content="https://faire-events.fr/events" />
         <meta property="og:type" content="website" />

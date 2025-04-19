@@ -128,9 +128,9 @@ const Home = () => {
     <div className="home">
       <Helmet>
         <title>Faire Events - Marchés de créateurs en Haute-Savoie</title>
-        <meta name="description" content="Découvrez les marchés de créateurs Faire Events en Haute-Savoie. Des événements uniques qui célèbrent l'artisanat local et mettent en valeur le talent des artisans de notre région." />
+        <meta name="description" content="Découvrez les marchés de créateurs Faire Events à Annecy et dans toute la Haute-Savoie. Des événements uniques qui célèbrent l'artisanat local et mettent en valeur le talent des artisans de notre région." />
         <meta property="og:title" content="Faire Events - Marchés de créateurs en Haute-Savoie" />
-        <meta property="og:description" content="Découvrez les marchés de créateurs Faire Events en Haute-Savoie. Des événements uniques qui célèbrent l'artisanat local." />
+        <meta property="og:description" content="Découvrez les marchés de créateurs Faire Events à Annecy et dans toute la Haute-Savoie. Des événements uniques qui célèbrent l'artisanat local." />
         <meta property="og:image" content="https://faire-events.fr/assets/logos/faire-logo.webp" />
         <meta property="og:url" content="https://faire-events.fr" />
         <meta property="og:type" content="website" />
@@ -146,7 +146,7 @@ const Home = () => {
         <div className="container">
           <h2>Bienvenue chez Faire Events</h2>
           <p>
-            Découvrez nos marchés de créateurs locaux dans la région d'Annecy.
+            Découvrez nos marchés de créateurs à Annecy et dans toute la Haute-Savoie.
             Des événements uniques qui mettent en valeur le talent des artisans
             et créateurs de notre région.
           </p>
