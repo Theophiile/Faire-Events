@@ -1,0 +1,76 @@
+@use '../../styles/variables' as *;
+
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: $spacing-md 0;
+  background: $color-light;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, $color-light, transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, $color-light, transparent);
+  }
+
+  .logo-slider-content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: 0 $spacing-md;
+    will-change: transform;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .logo-item {
+    flex: 0 0 auto;
+    width: 180px;
+    height: 80px;
+    padding: $spacing-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .partner-logo {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      transition: transform $transition-normal;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &[alt="Estelle Lagarde"] {
+        height: 80px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .logo-slider {
+    .logo-item {
+      width: 140px;
+      height: 60px;
+    }
+  }
+} 

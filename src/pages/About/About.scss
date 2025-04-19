@@ -1,0 +1,180 @@
+@use '../../styles/variables' as *;
+
+.about-page {
+  padding: $spacing-xl 0;
+
+  section {
+    margin-bottom: $spacing-xl * 2;
+  }
+
+  .hero-section {
+    text-align: center;
+    padding: $spacing-xl 0;
+
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: $spacing-xl;
+    }
+
+    h1 {
+      color: $color-secondary;
+      font-size: 2.5rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      color: $color-dark;
+    }
+  }
+
+  .team-section {
+    padding: $spacing-xl 0;
+    background-color: rgba($color-secondary, 0.05);
+
+    h2 {
+      text-align: center;
+      color: $color-secondary;
+      font-size: 2rem;
+      margin-bottom: $spacing-xl;
+    }
+
+    .team-member {
+      display: flex;
+      gap: $spacing-xl;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+
+      .member-photo {
+        flex: 0 0 300px;
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius-lg;
+          box-shadow: $shadow-md;
+        }
+      }
+
+      .member-info {
+        flex: 1;
+
+        h3 {
+          color: $color-secondary;
+          font-size: 1.8rem;
+          margin-bottom: $spacing-xs;
+        }
+
+        .role {
+          font-size: 1.2rem;
+          color: $color-primary;
+          margin-bottom: $spacing-md;
+          font-weight: 500;
+        }
+
+        .bio {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: $color-dark;
+        }
+      }
+    }
+  }
+
+  .values-section {
+    padding: $spacing-xl 0;
+
+    h2 {
+      text-align: center;
+      color: $color-secondary;
+      font-size: 2rem;
+      margin-bottom: $spacing-xl;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xl;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .value-card {
+        background: $color-light;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+        box-shadow: $shadow-md;
+        transition: transform $transition-normal;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        h3 {
+          color: $color-secondary;
+          font-size: 1.5rem;
+          margin-bottom: $spacing-md;
+        }
+
+        p {
+          color: $color-dark;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .about-page {
+    .hero-section {
+      padding: $spacing-lg $spacing-md;
+
+      .logo {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    .team-section {
+      padding: $spacing-lg $spacing-md;
+
+      .team-member {
+        flex-direction: column;
+        text-align: center;
+
+        .member-photo {
+          flex: 0 0 auto;
+          max-width: 250px;
+          margin: 0 auto;
+        }
+
+        .member-info {
+          .bio {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .values-section {
+      padding: $spacing-lg $spacing-md;
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+      }
+    }
+  }
+} 

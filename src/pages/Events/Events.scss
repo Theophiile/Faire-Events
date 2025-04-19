@@ -1,0 +1,125 @@
+@use '../../styles/variables' as *;
+
+.events-page {
+  padding: $spacing-xl 0;
+
+  h1 {
+    text-align: center;
+    color: $color-secondary;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xl;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: $spacing-xl;
+    padding: $spacing-md 0;
+  }
+
+  .event-card {
+    background: $color-light;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: transform $transition-normal;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .event-image-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+
+      .event-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $transition-normal;
+      }
+    }
+
+    .event-details {
+      padding: $spacing-lg;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .event-title {
+        color: $color-secondary;
+        font-size: 1.3rem;
+        margin-bottom: $spacing-md;
+        font-weight: 600;
+      }
+
+      .event-info {
+        flex: 1;
+        margin-bottom: $spacing-lg;
+
+        .event-date {
+          color: $color-dark;
+          font-weight: 500;
+          margin-bottom: $spacing-xs;
+          white-space: pre-line;
+        }
+
+        .event-location {
+          color: $color-dark;
+          font-size: 0.9rem;
+        }
+      }
+
+      .cta-button {
+        width: 100%;
+        padding: $spacing-sm;
+        background: $color-secondary;
+        color: $color-light;
+        border: none;
+        border-radius: $border-radius-md;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color $transition-normal;
+        margin-top: auto;
+
+        &:hover {
+          background: darken($color-secondary, 10%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .events-page {
+    padding: $spacing-lg $spacing-md;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    .events-grid {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+
+    .event-card {
+      .event-image-container {
+        height: 200px;
+      }
+
+      .event-details {
+        padding: $spacing-md;
+
+        .event-title {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+} 

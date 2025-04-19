@@ -1,0 +1,38 @@
+// Couleurs principales
+$color-primary: #f0efeb;     // Couleur de fond claire
+$color-secondary: #d4a373;   // Marron clair (accent)
+$color-dark: #333333;        // Texte principal
+$color-light: #ffffff;       // Fond blanc
+$color-gray: #666666;        // Texte secondaire
+
+// Typography
+$font-primary: 'Montserrat', sans-serif;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1200px;
+
+// Espacements
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 20px;
+
+// Box shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1); 

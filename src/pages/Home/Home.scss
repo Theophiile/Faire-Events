@@ -1,0 +1,138 @@
+@use '../../styles/variables' as *;
+
+.home {
+  .hero {
+    width: 100%;
+    margin-bottom: $spacing-xl;
+  }
+
+  .intro {
+    padding: $spacing-xl 0;
+    background-color: $color-light;
+    text-align: center;
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: $color-secondary;
+      font-size: 2rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    p {
+      color: $color-dark;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-xl;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: $color-secondary;
+      color: $color-light;
+      padding: $spacing-md $spacing-xl;
+      border-radius: $border-radius-lg;
+      font-weight: 500;
+      transition: background-color $transition-normal;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+      }
+    }
+  }
+}
+
+.partners {
+  padding: $spacing-xl 0;
+  background: $color-light;
+  border-top: 1px solid rgba($color-dark, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    color: $color-dark;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+.gallery-section {
+  padding: $spacing-xl 0;
+  background: $color-light;
+
+  .container {
+    text-align: center;
+  }
+
+  h2 {
+    color: $color-secondary;
+    margin-bottom: $spacing-md;
+  }
+
+  .gallery-intro {
+    max-width: 800px;
+    margin: 0 auto $spacing-lg;
+    color: $color-dark;
+  }
+
+  .coming-soon-message {
+    font-size: 1.5rem;
+    color: $color-secondary;
+    padding: $spacing-xl;
+    background-color: #f5f5f5;
+    border-radius: $border-radius-lg;
+    margin: $spacing-xl auto;
+    max-width: 600px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .home {
+    .intro {
+      padding: $spacing-lg $spacing-md;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .gallery-section {
+      padding: $spacing-lg $spacing-md;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .gallery-intro {
+        font-size: 1rem;
+        margin-bottom: $spacing-lg;
+      }
+    }
+  }
+
+  .partners {
+    padding: $spacing-lg 0;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .partners {
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-sm;
+    }
+  }
+} 

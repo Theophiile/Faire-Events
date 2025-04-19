@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .main-content {
+    flex: 1;
+    padding-top: 100px; // Ajusté pour correspondre à la nouvelle hauteur du header
+    background-color: $color-primary;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .layout {
+    .main-content {
+      padding-top: 80px; // Ajusté pour la version mobile
+    }
+  }
+} 

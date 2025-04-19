@@ -1,0 +1,90 @@
+@use 'variables' as *;
+
+// Reset CSS
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-dark;
+  line-height: 1.6;
+  background-color: $color-light;
+  min-height: 100vh;
+}
+
+// Styles de base
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color $transition-normal;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: $font-primary;
+  border: none;
+  background: none;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: $breakpoint-large;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+// Utilitaires
+.text-center {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mb-1 { margin-bottom: $spacing-xs; }
+.mb-2 { margin-bottom: $spacing-sm; }
+.mb-3 { margin-bottom: $spacing-md; }
+.mb-4 { margin-bottom: $spacing-lg; }
+.mb-5 { margin-bottom: $spacing-xl; } 

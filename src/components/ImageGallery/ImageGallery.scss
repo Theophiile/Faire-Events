@@ -1,0 +1,121 @@
+@use '../../styles/variables' as *;
+
+.image-gallery {
+  width: 100%;
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $spacing-md;
+    padding: $spacing-md 0;
+  }
+
+  .gallery-item {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: $border-radius-lg;
+    cursor: pointer;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-normal;
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba($color-dark, 0.8), transparent);
+      padding: $spacing-md;
+      transform: translateY(100%);
+      transition: transform $transition-normal;
+
+      p {
+        color: $color-light;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+
+      .image-overlay {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($color-dark, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: $spacing-md;
+
+  .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: $color-light;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .image-description {
+      padding: $spacing-md;
+      margin: 0;
+      text-align: center;
+      color: $color-dark;
+      background: $color-light;
+    }
+
+    .close-button {
+      position: absolute;
+      top: $spacing-sm;
+      right: $spacing-sm;
+      background: rgba($color-dark, 0.5);
+      color: $color-light;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background-color $transition-normal;
+
+      &:hover {
+        background: rgba($color-dark, 0.8);
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .image-gallery {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+} 

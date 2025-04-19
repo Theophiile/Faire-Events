@@ -1,0 +1,197 @@
+@use '../../styles/variables' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $color-primary;
+  z-index: 1000;
+  height: 80px;
+  transition: all $transition-normal;
+  
+  .header-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-md;
+  }
+
+  .logo-container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    .logo {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs;
+    z-index: 1001;
+
+    .hamburger {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $color-dark;
+      position: relative;
+      transition: all $transition-normal;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: $color-dark;
+        transition: all $transition-normal;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        bottom: -8px;
+      }
+
+      &.open {
+        background: transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: $spacing-lg;
+
+    a {
+      color: $color-dark;
+      font-weight: 500;
+      padding: $spacing-xs $spacing-sm;
+      border-bottom: 2px solid transparent;
+      transition: all $transition-normal;
+
+      &:hover {
+        color: $color-secondary;
+      }
+
+      &.active {
+        color: $color-secondary;
+        border-bottom-color: $color-secondary;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .header {
+    height: 90px;
+    
+    .logo-container {
+      height: 85px;
+      position: absolute;
+      right: $spacing-md;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      left: $spacing-md;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      right: auto;
+      width: 100%;
+      height: 100vh;
+      background: rgba($color-primary, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: $spacing-xl;
+      transition: all $transition-normal;
+      padding: $spacing-xl;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color-dark, 0.1);
+        z-index: -1;
+      }
+
+      &.open {
+        left: 0;
+      }
+
+      a {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        padding: $spacing-sm;
+        border: none;
+        color: $color-dark;
+        position: relative;
+        transition: all $transition-normal;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: $color-secondary;
+          transition: all $transition-normal;
+          transform: translateX(-50%);
+        }
+
+        &:hover,
+        &.active {
+          color: $color-secondary;
+          background: transparent;
+
+          &::after {
+            width: 30%;
+          }
+        }
+
+        &.active {
+          background: transparent;
+          color: $color-secondary;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+} 
