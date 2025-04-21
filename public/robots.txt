@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+
+# Délai entre les visites des robots (en secondes)
+Crawl-delay: 10
 
 Sitemap: https://faire-events.fr/sitemap.xml 
