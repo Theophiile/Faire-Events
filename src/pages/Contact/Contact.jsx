@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <Helmet>
-        <title>Contactez Faire Events | Marchés de créateurs en Haute-Savoie</title>
+        <title>Contactez Faire Events | Marchés de créateurs à Annecy</title>
         <meta name="description" content="Une question sur nos événements ou vous souhaitez exposer à l'un de nos marchés de créateurs à Annecy ? Contactez Faire Events pour plus d'informations." />
         <meta property="og:title" content="Contactez Faire Events | Marchés de créateurs en Haute-Savoie" />
         <meta property="og:description" content="Une question sur nos événements ou vous souhaitez exposer à l'un de nos marchés de créateurs ? Contactez-nous." />

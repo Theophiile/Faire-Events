@@ -42,15 +42,15 @@ const events = [
 const galleryImages = [
   {
     url: '/assets/images/photorecap/plasticienne.webp',
-    description: 'Artiste plasticienne présentant ses créations.'
+    description: 'Artiste plasticienne d\'Annecy présentant ses créations.'
   },
   {
     url: '/assets/images/photorecap/portraitiste.webp',
-    description: 'Portraitiste en pleine création lors d\'un événement.'
+    description: 'Portraitiste en pleine création lors d\'un événement à Thônes.'
   },
   {
     url: '/assets/images/photorecap/Estelle Lagarde.webp',
-    description: 'Estelle Lagarde, créatrice de bijoux et fondatrice de la marque Lagarde.'
+    description: 'Estelle Lagarde, créatrice de bijoux et fondatrice de la marque Lagarde, présente ses créations lors d\'un événement à Thônes.'
   },
   {
     url: '/assets/images/photorecap/Estelle cours.webp',
@@ -58,15 +58,15 @@ const galleryImages = [
   },
   {
     url: '/assets/images/photorecap/eco-responsable.webp',
-    description: 'Stand de décorations éco-responsables.'
+    description: 'Stand de décorations éco-responsables réalisé par une créatrice d\'Annecy.'
   },
   {
     url: '/assets/images/photorecap/linogravure.webp',
-    description: 'Exposition de linogravure par une artiste plasticienne.'
+    description: 'Exposition de linogravure par une artiste plasticienne de Chambéry.'
   },
   {
     url: '/assets/images/photorecap/gemmologue.webp',
-    description: 'Démonstration de taille de pierres précieuses par une lapidaire/gemmologue.'
+    description: 'Démonstration de taille de pierres précieuses par une lapidaire/gemmologue formé.'
   },
   {
     url: '/assets/images/photorecap/estellebijoux.webp',
