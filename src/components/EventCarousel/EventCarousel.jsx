@@ -22,6 +22,7 @@ const EventCarousel = ({ events }) => {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const [direction, setDirection] = useState(0); // -1 pour gauche, 1 pour droite
+  const [loadedImages, setLoadedImages] = useState([0]); // Préchargement de la première image
   const autoPlayRef = useRef(null);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
@@ -29,6 +30,27 @@ const EventCarousel = ({ events }) => {
   const minSwipeDistance = 50;
 
   useEffect(() => {
+    // Précharger les images adjacentes au slide actuel
+    const imagesToLoad = [
+      currentSlide,
+      (currentSlide + 1) % events.length,
+      (currentSlide - 1 + events.length) % events.length
+    ];
+    
+    setLoadedImages(prev => {
+      const newLoadedImages = [...new Set([...prev, ...imagesToLoad])];
+      return newLoadedImages;
+    });
+
+    // Précharger la première image dès le montage du composant
+    if (events.length > 0 && !document.querySelector(`link[href="${events[0].imageUrl}"][rel="preload"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = events[0].imageUrl;
+      document.head.appendChild(link);
+    }
+
     if (!isMobile) {
       autoPlayRef.current = setInterval(() => {
         setDirection(1);
@@ -41,7 +63,7 @@ const EventCarousel = ({ events }) => {
         }
       };
     }
-  }, [events.length, isMobile]);
+  }, [events.length, isMobile, currentSlide, events]);
 
   const nextSlide = () => {
     setDirection(1);
@@ -102,6 +124,9 @@ const EventCarousel = ({ events }) => {
           
           if (!isActive && !isPrev && !isNext) return null;
           
+          // Déterminer si cette image doit être chargée
+          const shouldLoad = loadedImages.includes(index);
+          
           return (
             <div
               key={event.id}
@@ -118,12 +143,18 @@ const EventCarousel = ({ events }) => {
               aria-roledescription="slide"
               aria-label={`${index + 1} sur ${events.length}`}
             >
-              <img 
-                src={event.imageUrl} 
-                alt=""
-                className="carousel-image"
-                role="presentation"
-              />
+              {shouldLoad && (
+                <img 
+                  src={event.imageUrl} 
+                  alt=""
+                  className="carousel-image"
+                  role="presentation"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  width={index === 0 ? "800" : undefined}
+                  height={index === 0 ? "350" : undefined}
+                  fetchpriority={index === 0 ? "high" : "auto"}
+                />
+              )}
               <div className="carousel-content">
                 <h2>{event.title}</h2>
                 <p className="event-date">{event.date}</p>

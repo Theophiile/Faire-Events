@@ -66,19 +66,19 @@ const galleryImages = [
   },
   {
     url: '/assets/images/photorecap/gemmologue.webp',
-    description: 'Démonstration de taille de pierres précieuses par une lapidaire/gemmologue formé.'
+    description: 'Démonstration de taille de pierres précieuses par une lapidaire/gemmologue.'
   },
   {
     url: '/assets/images/photorecap/estellebijoux.webp',
-    description: 'Pièce unique de haute joaillerie de la marque Lagarde.'
+    description: 'Pièce unique de haute joaillerie de la marque Lagarde, présentée lors d\'un événement à Thônes.'
   },
   {
     url: '/assets/images/photorecap/ateliercreatif.webp',
-    description: 'Atelier créatif ouvert aux enfants lors d\'un événement'
+    description: 'Atelier créatif ouvert aux enfants lors d\'un événement à Veyrier-du-Lac.'
   },
   {
     url: '/assets/images/photorecap/affichethones.webp',
-    description: 'Salon des créateurs de Thônes.'
+    description: 'Salon des créateurs de Thônes, près d\'Annecy.'
   }
 ];
 
