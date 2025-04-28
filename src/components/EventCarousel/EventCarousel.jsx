@@ -152,7 +152,7 @@ const EventCarousel = ({ events }) => {
                   loading={index === 0 ? "eager" : "lazy"}
                   width={index === 0 ? "800" : undefined}
                   height={index === 0 ? "350" : undefined}
-                  fetchpriority={index === 0 ? "high" : "auto"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                 />
               )}
               <div className="carousel-content">

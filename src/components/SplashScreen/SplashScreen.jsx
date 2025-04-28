@@ -27,6 +27,8 @@ const SplashScreen = ({ onComplete }) => {
               src="/assets/logos/faire-logo.webp"
               alt="Faire Logo"
               className="splash-logo"
+              width="150"
+              height="150"
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{
