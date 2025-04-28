@@ -8,7 +8,7 @@ const Contact = () => {
       <Helmet>
         <title>Contactez Faire Events | Marchés de créateurs à Annecy</title>
         <meta name="description" content="Une question sur nos événements ou vous souhaitez exposer à l'un de nos marchés de créateurs à Annecy ? Contactez Faire Events pour plus d'informations." />
-        <meta property="og:title" content="Contactez Faire Events | Marchés de créateurs en Haute-Savoie" />
+        <meta property="og:title" content="Contactez Faire Events | Marchés de créateurs à Annecy" />
         <meta property="og:description" content="Une question sur nos événements ou vous souhaitez exposer à l'un de nos marchés de créateurs ? Contactez-nous." />
         <meta property="og:image" content="https://faire-events.fr/assets/logos/faire-logo.webp" />
         <meta property="og:url" content="https://faire-events.fr/contact" />

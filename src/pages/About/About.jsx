@@ -6,7 +6,7 @@ const About = () => {
     <div className="about-page">
       <Helmet>
         <title>À propos de Faire Events | Organisateur de marchés de créateurs</title>
-        <meta name="description" content="Découvrez qui nous sommes et notre mission de valoriser l'artisanat local en Haute-Savoie à travers des marchés de créateurs uniques." />
+        <meta name="description" content="Découvrez qui nous sommes et notre mission de valoriser l'artisanat local à Annecy à travers des marchés de créateurs uniques." />
         <meta property="og:title" content="À propos de Faire Events | Organisateur de marchés de créateurs" />
         <meta property="og:description" content="Découvrez qui nous sommes et notre mission de valoriser l'artisanat local en Haute-Savoie." />
         <meta property="og:image" content="https://faire-events.fr/assets/images/photorecap/portraitiste.webp" />
