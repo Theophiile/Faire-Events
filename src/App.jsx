@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
-import Home from './pages/Home/Home';
-import Events from './pages/Events/Events';
-import About from './pages/About/About';
-import Contact from './pages/Contact/Contact';
+const Home = lazy(() => import('./pages/Home/Home'));
+const Events = lazy(() => import('./pages/Events/Events'));
+const About = lazy(() => import('./pages/About/About'));
+const Contact = lazy(() => import('./pages/Contact/Contact'));
 import SplashScreen from './components/SplashScreen/SplashScreen';
 
 function App() {
@@ -15,14 +15,16 @@ function App() {
       {showSplash ? (
         <SplashScreen onComplete={() => setShowSplash(false)} />
       ) : (
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
-        </Routes>
+        <Suspense fallback={<div>Chargement…</div>}>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+          </Routes>
+        </Suspense>
       )}
     </div>
   );

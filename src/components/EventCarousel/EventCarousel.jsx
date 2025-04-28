@@ -146,6 +146,12 @@ const EventCarousel = ({ events }) => {
               {shouldLoad && (
                 <img 
                   src={event.imageUrl} 
+                  srcSet={`
+                    ${event.imageUrl.replace('.webp', '-400.webp')} 400w,
+                    ${event.imageUrl.replace('.webp', '-800.webp')} 800w,
+                    ${event.imageUrl.replace('.webp', '-1200.webp')} 1200w
+                  `}
+                  sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
                   alt=""
                   className="carousel-image"
                   role="presentation"

@@ -25,6 +25,8 @@ const SplashScreen = ({ onComplete }) => {
           <div className="splash-content">
             <motion.img
               src="/assets/logos/faire-logo.webp"
+              srcSet="/assets/logos/faire-logo-150.webp 150w, /assets/logos/faire-logo-300.webp 300w, /assets/logos/faire-logo-600.webp 600w"
+              sizes="(max-width: 600px) 150px, (max-width: 900px) 300px, 600px"
               alt="Faire Logo"
               className="splash-logo"
               width="150"
