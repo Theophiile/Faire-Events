@@ -122,7 +122,7 @@ const Events = () => {
   return (
     <div className="events-page">
       <Helmet>
-        <title>Événements et Marchés de Créateurs | Faire Events</title>
+        <title>Événements et Marchés de Créateurs à Annecy | Faire Events</title>
         <meta name="description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events à Annecy et dans toute la Haute-Savoie. Dates, lieux et informations pratiques." />
         <meta property="og:title" content="Événements et Marchés de Créateurs | Faire Events" />
         <meta property="og:description" content="Découvrez tous les marchés de créateurs et événements artistiques organisés par Faire Events à Annecy et dans toute la Haute-Savoie. Dates, lieux et informations pratiques." />
