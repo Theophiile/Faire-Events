@@ -10,7 +10,7 @@ const events = [
     title: "Marché des Créateurs à Thônes",
     date: "Samedi 12 avril 2025 • 9h-18h\nSamedi 26 avril 2025 • 9h-18h",
     location: "Thônes - Place Avet",
-    imageUrl: "/assets/images/thones.webp",
+    imageUrl: "assets/images/thones.webp",
     description: `Faire Events
 
 Découvrez l'authenticité de l'artisanat local au cœur de Thônes !
@@ -24,7 +24,7 @@ Ces marchés sont l'occasion parfaite de soutenir les créateurs locaux tout en 
     title: "Marché des Créateurs à la Maison Gaia",
     date: "Samedi 3 & dimanche 4 mai 2025 • 9h-18h",
     location: "Meythet - 31 route de Frangy",
-    imageUrl: "/assets/images/maisongaia1.webp",
+    imageUrl: "assets/images/maisongaia1.webp",
     description: `Faire Events
 
 Week-end Créatif à la Maison Gaia !
@@ -38,7 +38,7 @@ Au programme : bijoux, accessoires, décoration, art, et de nombreuses autres cr
     title: "Marché des Créateurs à la Maison Gaia",
     date: "Samedi 7 & dimanche 8 juin 2025 • 9h-18h",
     location: "Meythet - 31 route de Frangy",
-    imageUrl: "/assets/images/maisongaia2.webp",
+    imageUrl: "assets/images/maisongaia2.webp",
     description: `Faire Events
 
 L'Art et l'Artisanat s'invitent à la Maison Gaia !
@@ -52,7 +52,7 @@ Venez découvrir des pièces uniques, échanger avec les créateurs et vous lais
     title: "Marché des Créateurs à Veyrier-du-Lac",
     date: "Dimanche 22 juin 2025 • 10h-19h\nDimanche 20 juillet 2025 • 10h-19h\nDimanche 24 août 2025 • 10h-19h\nDimanche 14 septembre 2025 • 10h-19h",
     location: "Veyrier-du-Lac - Quai Général Doyen",
-    imageUrl: "/assets/images/veyrier-du-lac.webp",
+    imageUrl: "assets/images/veyrier-du-lac.webp",
     description: `Faire Events
 
 Célébrez l'Artisanat Local : Marché de Créateurs sur la Promenade du Quai Général Doyen à Veyrier-Du-Lac !
@@ -65,25 +65,25 @@ Ces événements estivaux sont une véritable vitrine de l'artisanat local, mett
   {
     id: 5,
     title: "Marché des Créateurs à Sévrier",
-    date: "Dates à venir été 2025",
-    location: "Sévrier",
-    imageUrl: "/assets/images/panneausevrier.webp",
+    date: "Mardi 08 juillet 2025 • 16h-22h\nMardi 22 juillet 2025 • 16h-22h\nMardi 05 août 2025 • 16h-22h\nMardi 19 août 2025 • 16h-22h",
+    location: "Sévrier - Place de la mairie",
+    imageUrl: "assets/images/marchesevrier.webp",
     description: `Faire Events
 
-Nouveau ! Le Marché des Créateurs s'installe à Sévrier !
+Marché Nocturne des Créateurs à Sévrier !
 
-Faire Events est ravi d'annoncer l'arrivée prochaine d'un nouveau marché de créateurs dans le cadre enchanteur de Sévrier, au bord du lac d'Annecy.
+Faire Events est ravi de vous présenter son nouveau marché nocturne des créateurs dans le cadre enchanteur de Sévrier, au bord du lac d'Annecy. Quatre soirées estivales exceptionnelles vous attendent pour découvrir l'artisanat local dans une ambiance unique.
 
-Préparez-vous à découvrir une sélection d'artisans talentueux qui vous présenteront leurs créations uniques dans un cadre exceptionnel. Bijoux, céramiques, textiles, art, et bien d'autres créations vous attendent pour une expérience artistique inoubliable.
+Profitez des douces soirées d'été pour venir à la rencontre d'artisans passionnés qui vous présenteront leurs créations uniques : bijoux, céramiques, textiles, art, et bien d'autres créations originales. Un moment privilégié pour soutenir les talents locaux tout en profitant de la fraîcheur du soir.
 
-Les dates seront annoncées prochainement. Restez connectés pour ne pas manquer cet événement qui promet d'être une belle célébration de l'artisanat local !`
+Rejoignez-nous les mardis soirs de juillet et août pour une expérience artistique inoubliable au cœur de Sévrier !`
   },
   {
     id: 6,
     title: "Marché de Noël des Créateurs à Veyrier-du-Lac",
     date: "Dates à venir Noël 2025",
     location: "Veyrier-du-Lac",
-    imageUrl: "/assets/images/veyriernoel.webp",
+    imageUrl: "assets/images/veyriernoel.webp",
     description: `Faire Events
 
 La Magie de Noël s'invite au Marché des Créateurs de Veyrier-du-Lac !
@@ -110,11 +110,11 @@ const Events = () => {
   // Fonction pour générer des textes alternatifs descriptifs
   const getImageAltText = (event) => {
     if (event.id === 1) return "Espace verdoyant de la Maison Gaia à Meythet, région d'Annecy pour l'événement de mai 2025";
-    if (event.id === 4) return "Vue extérieure de la Maison Gaia à Meythet près d'Annecy pour le marché de juin 2025";
+    if (event.id === 4) return "Vue extérieure de la Maison Gaia à Meythet près d'Annecy pour le marché des créateurs de juin 2025";
     if (event.id === 2) return "Vue du quai Général Doyen à Veyrier-du-Lac sur les bords du lac d'Annecy";
-    if (event.id === 3) return "Place Avet au centre de Thônes en Haute-Savoie près d'Annecy";
-    if (event.id === 5) return "Panneau d'information de la ville de Sévrier au bord du lac d'Annecy";
-    if (event.id === 6) return "Ambiance de Noël à Veyrier-du-Lac sur les rives du lac d'Annecy";
+    if (event.id === 3) return "Marché des créateurs, Place Avet au centre de Thônes en Haute-Savoie près d'Annecy";
+    if (event.id === 5) return "Vue du marché des créateurs à Sévrier au bord du lac d'Annecy";
+    if (event.id === 6) return "Ambiance de Noël pour un marché des créateurs à Veyrier-du-Lac sur les rives du lac d'Annecy";
     
     return `Illustration pour ${event.title} dans la région d'Annecy`; // Fallback
   };
@@ -138,7 +138,7 @@ const Events = () => {
           {events.map((event) => (
             <div 
               key={event.id} 
-              className={`event-card ${event.id === 5 || event.id === 6 ? 'short-description' : ''}`}
+              className={`event-card ${event.id === 5 || event.id === 6 ? 'short-description' : ''} ${event.id === 3 ? 'event-ended' : ''}`}
             >
               <div className="event-image-container">
                 <img 

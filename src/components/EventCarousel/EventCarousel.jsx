@@ -152,13 +152,16 @@ const EventCarousel = ({ events }) => {
                     ${event.imageUrl.replace('.webp', '-1200.webp')} 1200w
                   `}
                   sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
-                  alt=""
+                  alt={`${event.title} - ${event.location}`}
                   className="carousel-image"
-                  role="presentation"
                   loading={index === 0 ? "eager" : "lazy"}
                   width={index === 0 ? "800" : undefined}
                   height={index === 0 ? "350" : undefined}
                   fetchPriority={index === 0 ? "high" : "auto"}
+                  onError={(e) => {
+                    console.error(`Erreur de chargement de l'image: ${event.imageUrl}`);
+                    e.target.style.display = 'none';
+                  }}
                 />
               )}
               <div className="carousel-content">
