@@ -10,20 +10,6 @@ import './Home.scss';
 // Import des données des événements (à déplacer vers un fichier séparé plus tard)
 const events = [
   {
-    id: 1,
-    title: "Marché des Créateurs à la Maison Gaia",
-    date: "Samedi 3 & dimanche 4 mai 2025 • 9h-18h",
-    location: "Meythet",
-    imageUrl: "assets/images/maisongaia1.webp"
-  },
-  {
-    id: 4,
-    title: "Marché des Créateurs à la Maison Gaia",
-    date: "Samedi 7 & dimanche 8 juin 2025 • 9h-18h",
-    location: "Meythet",
-    imageUrl: "assets/images/maisongaia2.webp"
-  },
-  {
     id: 2,
     title: "Marché des Créateurs à Veyrier-du-Lac",
     date: "Samedi 22 juin 2025 • 9h-18h",
@@ -32,7 +18,7 @@ const events = [
   },
   {
     id: 5,
-    title: "Marché des Créateurs à Sévrier",
+    title: "Marché Nocturne des Créateurs à Sévrier",
     date: "Mardi 08 juillet 2025 • 16h-22h\nMardi 22 juillet 2025 • 16h-22h\nMardi 05 août 2025 • 16h-22h\nMardi 19 août 2025 • 16h-22h",
     location: "Sévrier - Place de la mairie",
     imageUrl: "assets/images/marchesevrier.webp"
@@ -102,11 +88,6 @@ const partners = [
     id: 4,
     name: 'Mairie de Thônes',
     logo: '/assets/images/mairiethones.webp'
-  },
-  {
-    id: 5,
-    name: 'Maison Gaia',
-    logo: '/assets/images/maisongaialogo.webp'
   }
 ];
 

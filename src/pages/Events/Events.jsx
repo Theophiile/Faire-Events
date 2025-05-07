@@ -34,20 +34,6 @@ La Maison Gaia ouvre ses portes pour un week-end dédié à l'artisanat local. D
 Au programme : bijoux, accessoires, décoration, art, et de nombreuses autres créations originales. Une occasion unique de rencontrer les artisans, d'échanger sur leur savoir-faire et de trouver des pièces uniques qui racontent une histoire.`
   },
   {
-    id: 4,
-    title: "Marché des Créateurs à la Maison Gaia",
-    date: "Samedi 7 & dimanche 8 juin 2025 • 9h-18h",
-    location: "Meythet - 31 route de Frangy",
-    imageUrl: "assets/images/maisongaia2.webp",
-    description: `Faire Events
-
-L'Art et l'Artisanat s'invitent à la Maison Gaia !
-
-Pour cette nouvelle édition, nous vous proposons une expérience immersive dans l'univers de la création artisanale. La Maison Gaia accueille une sélection d'artisans talentueux qui vous présenteront leurs dernières créations.
-
-Venez découvrir des pièces uniques, échanger avec les créateurs et vous laisser inspirer par leur passion. Un rendez-vous incontournable pour les amateurs d'artisanat authentique et de créations originales.`
-  },
-  {
     id: 2,
     title: "Marché des Créateurs à Veyrier-du-Lac",
     date: "Dimanche 22 juin 2025 • 10h-19h\nDimanche 20 juillet 2025 • 10h-19h\nDimanche 24 août 2025 • 10h-19h\nDimanche 14 septembre 2025 • 10h-19h",
@@ -64,7 +50,7 @@ Ces événements estivaux sont une véritable vitrine de l'artisanat local, mett
   },
   {
     id: 5,
-    title: "Marché des Créateurs à Sévrier",
+    title: "Marché Nocturne des Créateurs à Sévrier",
     date: "Mardi 08 juillet 2025 • 16h-22h\nMardi 22 juillet 2025 • 16h-22h\nMardi 05 août 2025 • 16h-22h\nMardi 19 août 2025 • 16h-22h",
     location: "Sévrier - Place de la mairie",
     imageUrl: "assets/images/marchesevrier.webp",
@@ -81,8 +67,8 @@ Rejoignez-nous les mardis soirs de juillet et août pour une expérience artisti
   {
     id: 6,
     title: "Marché de Noël des Créateurs à Veyrier-du-Lac",
-    date: "Dates à venir Noël 2025",
-    location: "Veyrier-du-Lac",
+    date: "Samedi 13 & dimanche 14 décembre 2025",
+    location: "Veyrier-du-Lac - Salle La Veyrière",
     imageUrl: "assets/images/veyriernoel.webp",
     description: `Faire Events
 
@@ -92,7 +78,7 @@ Pour célébrer la période des fêtes, Faire Events vous convie à un marché d
 
 Au programme : créations artisanales, décorations de Noël faites main, bijoux, accessoires, art et bien d'autres trésors qui feront des cadeaux parfaits pour les fêtes. Laissez-vous porter par la magie de Noël tout en soutenant les créateurs de notre région.
 
-Les dates exactes seront annoncées prochainement. Un rendez-vous hivernal à ne pas manquer pour trouver des cadeaux originaux et authentiques !`
+Un rendez-vous hivernal à ne pas manquer pour trouver des cadeaux originaux et authentiques !`
   }
 ];
 
@@ -110,7 +96,6 @@ const Events = () => {
   // Fonction pour générer des textes alternatifs descriptifs
   const getImageAltText = (event) => {
     if (event.id === 1) return "Espace verdoyant de la Maison Gaia à Meythet, région d'Annecy pour l'événement de mai 2025";
-    if (event.id === 4) return "Vue extérieure de la Maison Gaia à Meythet près d'Annecy pour le marché des créateurs de juin 2025";
     if (event.id === 2) return "Vue du quai Général Doyen à Veyrier-du-Lac sur les bords du lac d'Annecy";
     if (event.id === 3) return "Marché des créateurs, Place Avet au centre de Thônes en Haute-Savoie près d'Annecy";
     if (event.id === 5) return "Vue du marché des créateurs à Sévrier au bord du lac d'Annecy";
@@ -138,7 +123,7 @@ const Events = () => {
           {events.map((event) => (
             <div 
               key={event.id} 
-              className={`event-card ${event.id === 5 || event.id === 6 ? 'short-description' : ''} ${event.id === 3 ? 'event-ended' : ''}`}
+              className={`event-card ${event.id === 5 || event.id === 6 ? 'short-description' : ''} ${event.id === 3 || event.id === 1 ? 'event-ended' : ''}`}
             >
               <div className="event-image-container">
                 <img 
