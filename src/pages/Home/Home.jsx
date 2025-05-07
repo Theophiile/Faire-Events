@@ -13,7 +13,7 @@ const events = [
     id: 2,
     title: "Marché des Créateurs à Veyrier-du-Lac",
     date: "Samedi 22 juin 2025 • 9h-18h",
-    location: "Veyrier-du-Lac - Quai général Doyen",
+    location: "Veyrier-du-Lac - Quai Général Doyen",
     imageUrl: "assets/images/veyrier-du-lac.webp"
   },
   {
