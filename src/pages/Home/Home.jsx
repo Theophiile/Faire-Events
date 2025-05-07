@@ -13,13 +13,13 @@ const events = [
     id: 2,
     title: "Marché des Créateurs à Veyrier-du-Lac",
     date: "Samedi 22 juin 2025 • 9h-18h",
-    location: "Veyrier-du-Lac",
+    location: "Veyrier-du-Lac - Quai général Doyen",
     imageUrl: "assets/images/veyrier-du-lac.webp"
   },
   {
     id: 5,
     title: "Marché Nocturne des Créateurs à Sévrier",
-    date: "Mardi 08 juillet 2025 • 16h-22h\nMardi 22 juillet 2025 • 16h-22h\nMardi 05 août 2025 • 16h-22h\nMardi 19 août 2025 • 16h-22h",
+    date: "Mardi 08 juillet 2025 • 16h-22h",
     location: "Sévrier - Place de la mairie",
     imageUrl: "assets/images/marchesevrier.webp"
   }
